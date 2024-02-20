@@ -23,4 +23,14 @@ print(X)
 
 print(y)
 
+## using one hot encoder to convert the categorical data into vectors
+
+ct=ColumnTransformer(transformers=[('encoder',OneHotEncoder(),[3])],remainder="passthrough")
+
+# print(X) for checking the categorical data before transform
+
+X=np.array(ct.fit_transform(X))
+
+print(X)
+
 ##
